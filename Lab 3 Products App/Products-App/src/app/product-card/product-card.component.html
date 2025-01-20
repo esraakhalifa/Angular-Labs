@@ -1,0 +1,32 @@
+
+  @if(productItem.stock > 0){
+    <div class="product-card in-stock">
+        <img [src]="productItem.thumbnail" [alt]="productItem.title" width="300" height="300">
+        <span class="stock-status">In Stock</span>
+        <h3>{{productItem.title}}</h3>
+        <p>${{ productItem.price }}</p>
+        <div class="rating">
+            @for(star of getStars(productItem.rating); track star)
+            {
+                <span class="star">&#9733;</span>
+            }
+            
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="view-product" (click) = "getDetails(productItem.id)">View Product</button>
+    </div>
+   
+  }
+@else{
+    <div class="product-card out-of-stock">
+        <img [src]="productItem.thumbnail" [alt]="productItem.title">
+        <span class="stock-status out">Out of Stock</span>
+        <h3>{{productItem.title}}</h3>
+        <p>${{ productItem.price }}</p>
+        <button class="add-to-cart" disabled>Out of Stock</button>
+        <button class="view-product" (click) = "getDetails(productItem.id)">View Product</button>
+    </div>
+}
+
+
+  

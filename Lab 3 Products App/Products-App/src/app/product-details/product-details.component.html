@@ -1,0 +1,43 @@
+<app-navigation></app-navigation>
+@if(productItem.stock > 0){
+<div class="product-image">
+    <img [src]="productItem.images" loading="lazy" [alt]="productItem.title">
+</div>
+<div class="product-details">
+    <h1>{{productItem.title}}</h1>
+    <p>{{productItem.description}}</p>
+    <div class="rating">
+        @for(star of getStars(productItem.rating); track star)
+        {
+            <span class="star">&#9733;</span>
+        }
+    </div>
+    <p class="price">${{productItem.price}}</p>
+    <p class="stock-status">In stock</p>
+    <button class="buy-now">Buy Now</button>
+    <button class="add-to-cart">Add to Cart</button>
+</div>
+}
+@else{
+    <div class="product-image">
+        <img [src]="productItem.images" eager="lazy" [alt]="productItem.title">
+    </div>
+    <div class="product-details">
+        <h1>{{productItem.title}}</h1>
+        <p>{{productItem.description}}</p>
+        <div class="rating" >
+            @for(star of getStars(productItem.rating); track star)
+            {
+                <span class="star">&#9733;</span>
+            }
+        </div>
+        <p class="price">${{productItem.price}}</p>
+        <span class="stock-status out">Out of Stock</span>
+        <button class="buy-now" disabled>Buy Now</button>
+        <button class="add-to-cart" disabled>Out of Stock</button>
+    </div>
+
+}
+
+
+  

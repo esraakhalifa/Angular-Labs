@@ -1,0 +1,50 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+    flex: 1 1 auto;
+  }
+  
+  .card-title {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: #fff; /* Blue text */
+    font-size: 1.5rem;
+    background-color: #007bff;
+    border-radius: 15px;
+    padding: 10px;
+    
+    /* Centering the text */
+    text-align: center;
+    
+    /* Optional for visual alignment */
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* Optional: Adjust width to the content size */
+}
+
+  
+  .card-text {
+    margin-bottom: 1.25rem;
+    color: #333; /* Dark text */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  

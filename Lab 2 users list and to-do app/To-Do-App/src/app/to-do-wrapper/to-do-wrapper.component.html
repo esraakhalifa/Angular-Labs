@@ -1,0 +1,2 @@
+<app-to-do-form (sendTaskToParentToBeAdded)="addTask($event)" ></app-to-do-form>
+<app-to-do-list [tasks]="tasks" (sendTaskToParentToBeDeleted) = "deleteTask($event)"></app-to-do-list>

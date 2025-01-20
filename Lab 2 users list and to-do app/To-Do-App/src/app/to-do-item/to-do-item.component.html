@@ -1,0 +1,20 @@
+  <!-- Display tasks as cards -->
+  <div class="row mt-3">
+    <div  class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+            <p class="card-text" >
+                {{ taskItem }}
+              </p>
+          <button class="btn btn-success btn-sm me-2" onclick="this.parentNode.querySelector('p').style.textDecoration = 'line-through';">Complete</button>
+          <button class="btn btn-danger" (click)="handleDeletedTask(taskItem)" >Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!--
+  (click)="deleteTask(i)"
+  (click)="markComplete(i)" [disabled]="task.completed"
+  [class.text-decoration-line-through]="task.completed"
+  --> 
