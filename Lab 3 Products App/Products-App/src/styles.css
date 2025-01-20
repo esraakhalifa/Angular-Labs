@@ -184,3 +184,7 @@
   outline: none; /* Remove the outline when focused */
   box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Soft glow effect on focus */
 }
+.original-price {
+  text-decoration: line-through;
+  color: gray;  /* Optional: Make it look faded */
+}

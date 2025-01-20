@@ -12,7 +12,8 @@
             <span class="star">&#9733;</span>
         }
     </div>
-    <p class="price">${{productItem?.price}}</p>
+    <p class="original-price ">${{productItem?.price}}</p>
+    <p class="price">${{productItem?.price  | discountedPrice: productItem?.discountPercentage}}</p>
     <p class="stock-status">In stock</p>
     <button class="buy-now">Buy Now</button>
     <button class="add-to-cart">Add to Cart</button>
@@ -31,7 +32,8 @@
                 <span class="star">&#9733;</span>
             }
         </div>
-        <p class="price">${{productItem?.price}}</p>
+        <p class="original-price ">${{productItem?.price}}</p>
+        <p class="price">${{productItem?.price  | discountedPrice: productItem?.discountPercentage}}</p>
         <span class="stock-status out">Out of Stock</span>
         <button class="buy-now" disabled>Buy Now</button>
         <button class="add-to-cart" disabled>Out of Stock</button>
