@@ -1,0 +1,79 @@
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+
+    @if (formControls['name'].invalid && formControls['name'].touched) {
+      @if (formControls['name'].hasError('required')) {
+        <div class="form-text text-danger">Required</div>
+    }
+
+  }
+  <div>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" formControlName="userName">
+  </div>
+
+    @if (formControls['userName'].invalid && formControls['userName'].touched) {
+      @if (formControls['userName'].hasError('required')) {
+        <div class="form-text text-danger">Required</div>
+      }
+      @else if (formControls['userName'].hasError('pattern')) {
+        <div class="form-text text-danger">Invalid username</div>
+      }
+    }
+
+    <!-- Password Field -->
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="userPassword">
+    </div>
+
+    @if (formControls['userPassword'].invalid && formControls['userPassword'].touched) {
+      @if (formControls['userPassword'].hasError('required')) {
+        <div class="form-text text-danger">Required</div>
+      }
+      @else if  (formControls['userPassword'].hasError('pattern')) {
+        <div class="form-text text-danger">Invalid password</div>
+      }
+    }
+
+
+    <div>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword">
+    </div>
+
+    @if (formControls['confirmPassword'].touched) {
+      @if (formControls['confirmPassword'].hasError('required')) {
+        <div class="form-text text-danger">Required</div>
+      }
+      @else if (formControls['confirmPassword'].value !== formControls['userPassword'].value){
+        <div class="form-text text-danger">Passwords don't match</div>
+      }
+    }
+
+    <!-- <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+  </form> -->
+
+  <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="registrationForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+
+  <!-- @if(RegisterFormControls['confirmPassword'].touched){
+    @if(RegisterFormControls['confirmPassword'].value!=RegisterFormControls['password'].value){
+    <p>It should be the same password</p>
+
+    } @else if(RegisterFormControls['confirmPassword'].hasError('required')){
+    <p>Password is required</p>
+    } } -->
+    
+

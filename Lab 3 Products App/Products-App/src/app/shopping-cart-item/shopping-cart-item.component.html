@@ -1,0 +1,34 @@
+
+    <div class="container">
+        <h1>Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th></th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="cart-item">
+                            <img [src]="productItem.thumbnail" alt="productItem">
+                            <div>
+                                <h3>{{productItem.title}}</h3>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="quantity-btn">-</button>
+                        <input type="number" min="1" value="1" />
+                        <button class="quantity-btn">+</button>
+                    </td>
+                    <td><span class="remove">x</span></td>
+                    <td>{{productItem.price}}</td>
+                </tr>
+        <div class="cart-total">
+            <span>Total:</span> 
+        </div>
+
+

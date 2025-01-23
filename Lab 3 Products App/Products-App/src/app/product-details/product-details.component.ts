@@ -1,12 +1,11 @@
 import { Component} from '@angular/core';
 import { productsData, Product } from '../product-list/product-list.component';
 import { ActivatedRoute} from '@angular/router';
-import { NavigationComponent } from '../navigation/navigation.component';
 import { DiscountedPricePipe } from '../discounted-price.pipe';
 
 @Component({
   selector: 'app-product-details',
-  imports: [NavigationComponent, DiscountedPricePipe],
+  imports: [ DiscountedPricePipe],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
 

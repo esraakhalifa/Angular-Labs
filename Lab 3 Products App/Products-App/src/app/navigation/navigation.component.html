@@ -2,8 +2,18 @@
     <div class="logo" [routerLink]="['/']"   routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
         true}" role="link">Products App</div>
     <ul class="nav-links">
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a [routerLink]="['/register']"   routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+            true}">Register</a></li>
+        <li><a [routerLink]="['/login']"   routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+            true}">Login</a></li>
+            <div class="cart-container">
+                <a href="#" class="cart-link">
+                  <i class="fas fa-shopping-cart cart-icon"></i>
+                  @if (shoppingCartCount > 0) {
+                    <span class="cart-badge">{{ shoppingCartCount }}</span>
+                  }
+                </a>
+              </div>
+              
     </ul>
 </nav>

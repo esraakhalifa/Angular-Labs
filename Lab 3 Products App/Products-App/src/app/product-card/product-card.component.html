@@ -8,11 +8,11 @@
         <div class="rating">
             @for(star of getStars(productItem.rating); track star)
             {
-                <span class="star">&#9733;</span>
+                <span class="star" >&#9733;</span>
             }
             
         </div>
-        <button class="add-to-cart">Add to Cart</button>
+        <button class="add-to-cart" (click)="addToCart()">Add to Cart</button>
         <button class="view-product" (click) = "getDetails(productItem.id)">View Product</button>
     </div>
    

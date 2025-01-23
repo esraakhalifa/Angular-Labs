@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import productsDataJSON from './../../../public/assets/products.json'; 
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { NavigationComponent } from '../navigation/navigation.component';
+import { ShoppingCartService } from '../services/shopping-cart.service';
 
 
 interface Dimensions {
@@ -13,14 +13,14 @@ interface Dimensions {
 interface Review {
   rating: number;
   comment: string;
-  date: string; // ISO 8601 format
+  date: string; 
   reviewerName: string;
   reviewerEmail: string;
 }
 
 interface Meta {
-  createdAt: string; // ISO 8601 format
-  updatedAt: string; // ISO 8601 format
+  createdAt: string;
+  updatedAt: string; 
   barcode: string;
   qrCode: string;
 }
@@ -58,7 +58,7 @@ export interface Product {
 export const productsData = productsDataJSON as { products: Product[]; total: number; skip: number; limit: number };
 @Component({
   selector: 'app-product-list',
-  imports: [ProductCardComponent, NavigationComponent],
+  imports: [ProductCardComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -66,5 +66,7 @@ export const productsData = productsDataJSON as { products: Product[]; total: nu
 export class ProductListComponent {
   
   Products: Product[] = productsData.products; 
+
+
 
 }
