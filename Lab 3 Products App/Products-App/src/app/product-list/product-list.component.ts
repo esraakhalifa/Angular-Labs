@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import productsDataJSON from './../../../public/assets/products.json'; 
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { ShoppingCartService } from '../services/shopping-cart.service';
+//import { ShoppingCartService } from '../services/shopping-cart.service';
+import { ProductsService } from '../services/products.service';
+
 
 
 interface Dimensions {
@@ -64,9 +66,13 @@ export const productsData = productsDataJSON as { products: Product[]; total: nu
 })
 
 export class ProductListComponent {
+  Products:any = []
+  constructor(private productsService: ProductsService) {}
+  ngOnInit(){
+    this.productsService.getProductList().subscribe(res => this.Products 
+      = res.products);
+  }
   
-  Products: Product[] = productsData.products; 
-
 
 
 }

@@ -1,0 +1,62 @@
+.product-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Optional: adds space between the product card and title */
+  }
+.product-card{
+    border: 10px;
+    border-color:greenyellow;
+    background-color: grey;
+    margin-left: 0;
+    width: 600px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+}
+.product-details{
+    flex: 1;
+    margin: 30px;
+}
+.product-details h1,
+.product-details p,
+.product-details b{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.product-buttons {
+    background-color: green; 
+    color: white; 
+    border: 2px solid green; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    transition: all 0.3s ease; 
+    margin-right: 10px;
+  } 
+  
+  .product-buttons:hover {
+    background-color: greenyellow; /* Darker blue when hovering */
+    border-color: greenyellow;
+     /* Darker border on hover */
+  }
+  .product-buttons:disabled{
+    background-color: gray;
+    border-color:gray ;
+  }
+  .stock-status {
+    align-self: flex-end;
+    background: green;
+    color: white;
+    padding: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 5px auto;
+  }
+  .stock-status.out {
+    background: red;
+  }

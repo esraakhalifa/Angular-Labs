@@ -7,6 +7,7 @@
   text-align: center;
   width: 400px;
   margin-left: 50px;
+  transition: transform 0.5s ease;
   
 }
 
@@ -41,6 +42,14 @@
   transition: all 0.3s ease; /* Smooth transition for hover effects */
   margin-right: 10px;
 } 
+.buy-now{
+  padding: 10px 20px;
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 .product-card:hover{
   transform: scale(1.05)
@@ -164,9 +173,6 @@
   cursor: pointer;
 }
 
-.buy-now {
-  background-color: #333; 
-}
 .star {
   color: gold;
 

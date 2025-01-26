@@ -1,4 +1,4 @@
-
+<!-- 
 @if(productItem?.stock > 0){
 <div class="product-details-card">
     <div class="product-details-image">
@@ -23,9 +23,9 @@
 </div>
 }
 @else{
-    <!-- <div class="product-image">
+    <div class="product-image">
         <img [src]="productItem?.images" [alt]="productItem?.title">
-    </div> -->
+    </div>
     <div class="product-details">
         <h1>{{productItem?.title}}</h1>
         <p>{{productItem?.description}}</p>
@@ -45,4 +45,63 @@
 }
 
 
-  
+   -->
+@if(productItem?.stock > 0){
+<div class="product-container">
+    <div>
+        <div class = "product-card">
+            <img [src]="productItem?.images" [alt]="productItem?.title">
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h1>{{productItem?.title}}</h1>
+        <b>Category: </b>{{productItem?.category}}
+        <br>
+        <b>Description:</b>
+        <p>{{productItem?.description}}</p>
+        <b>Rating: </b>
+        <div class="rating" >
+            @for(star of getStars(productItem?.rating); track star)
+            {
+                <span class="star">&#9733;</span>
+            }
+        </div>
+        <b>Original price: </b><p class="original-price ">${{productItem?.price}}</p>
+        <b>Price after discount: </b><p class="price">${{productItem?.price  | discountedPrice: productItem?.discountPercentage}}</p>
+        <span class="stock-status">In Stock</span>
+        <button class="product-buttons" >Buy Now</button>
+        <button class="product-buttons" >Add to cart</button>
+    </div>
+</div>
+}
+@else{
+    <div class="product-container">
+        <div>
+            <div class = "product-card">
+                <img [src]="productItem?.images" [alt]="productItem?.title">
+            </div>
+        </div>
+    
+        <div class="product-details">
+            <h1>{{productItem?.title}}</h1>
+            <b>Category: </b>{{productItem?.category}}
+            <br>
+            <b>Description:</b>
+            <p>{{productItem?.description}}</p>
+            <b>Rating: </b>
+            <div class="rating" >
+                @for(star of getStars(productItem?.rating); track star)
+                {
+                    <span class="star">&#9733;</span>
+                }
+            </div>
+            <b>Original price: </b><p class="original-price ">${{productItem?.price}}</p>
+            <b>Price after discount: </b><p class="price">${{productItem?.price  | discountedPrice: productItem?.discountPercentage}}</p>
+            <span class="stock-status out">Out of Stock</span>
+            <button class="product-buttons" disabled>Buy Now</button>
+            <button class="product-buttons" disabled>Out of Stock</button>
+        </div>
+    </div>
+
+}
